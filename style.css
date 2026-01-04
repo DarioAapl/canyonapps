@@ -227,3 +227,95 @@ footer {
 .footer-meta a:hover {
   text-decoration: underline;
 }
+
+/* =========================
+   MOBILE FIXES (IMPORTANT)
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Soften background on mobile */
+  body::before {
+    filter: blur(4px) saturate(1.05);
+    transform: scale(1.02);
+  }
+
+  body::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 245, 225, 0.75),
+      rgba(255, 255, 255, 0.95)
+    );
+  }
+
+  /* HERO spacing */
+  .hero {
+    padding: 90px 20px 70px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+  }
+
+  /* CTA button */
+  .cta {
+    width: 100%;
+    max-width: 280px;
+    padding: 16px 0;
+  }
+
+  /* APPS section */
+  .apps {
+    padding: 70px 20px;
+  }
+
+  .apps h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+
+  /* Cards spacing */
+  .app-card {
+    padding: 28px;
+  }
+
+  /* Philosophy */
+  .philosophy {
+    padding: 70px 20px;
+  }
+
+  .philosophy h2 {
+    font-size: 2.1rem;
+  }
+
+  /* SUPPORT & LEGAL FIX (THIS WAS THE BIG ONE) */
+  .links {
+    padding: 70px 20px;
+  }
+
+  .link-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .link-buttons a {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 50px 20px;
+  }
+
+  .footer-meta {
+    font-size: 0.9rem;
+  }
+}
