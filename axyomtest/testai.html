@@ -1,34 +1,42 @@
 <style>
-.axyom-section{
-  display:flex;
-  gap:30px;
-  padding:40px;
-  background:linear-gradient(135deg,#f2f2f2,#d9d9d9);
-  border-radius:16px;
+
+/* grey gradient demo area */
+.axyom-demo {
+  height: 500px;
+  background: linear-gradient(135deg,#eeeeee,#d6d6d6);
+  border-radius: 20px;
+  position: relative;
 }
 
-.axyom-box{
-  flex:1;
-  min-width:320px;
+/* move the two widgets */
+#axyom-widget-1{
+  position:fixed !important;
+  bottom:30px !important;
+  right:120px !important;
 }
+
+#axyom-widget-2{
+  position:fixed !important;
+  bottom:30px !important;
+  right:30px !important;
+}
+
 </style>
 
-<div class="axyom-section">
+<div class="axyom-demo"></div>
 
-  <div class="axyom-box">
-    <!-- AXYOM AI -->
-    <script>
-      window.AXYOM_KEY = "axyom_live_80165a9a014163a6750a6ba30ee99423";
-    </script>
-    <script src="https://api.axyom.ch/widget/axyom.js" async></script>
-  </div>
 
-  <div class="axyom-box">
-    <!-- AXYOM AI -->
-    <script>
-      window.AXYOM_KEY = "axyom_live_99dce7186fa0f1972b639a39beff0b14";
-    </script>
-    <script src="https://api.axyom.ch/widget/axyom.js" async></script>
-  </div>
+<!-- AXYOM AI -->
+<script>
+window.AXYOM_KEY="axyom_live_80165a9a014163a6750a6ba30ee99423";
+window.AXYOM_WIDGET_ID="axyom-widget-1";
+</script>
+<script src="https://api.axyom.ch/widget/axyom.js" async></script>
 
-</div>
+
+<!-- AXYOM AI -->
+<script>
+window.AXYOM_KEY="axyom_live_99dce7186fa0f1972b639a39beff0b14";
+window.AXYOM_WIDGET_ID="axyom-widget-2";
+</script>
+<script src="https://api.axyom.ch/widget/axyom.js" async></script>
