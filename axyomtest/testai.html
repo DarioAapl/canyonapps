@@ -1,11 +1,23 @@
-<!-- AXYOM AI -->
-<script>
-  window.AXYOM_KEY = "axyom_live_80165a9a014163a6750a6ba30ee99423";
-</script>
-<script src="https://api.axyom.ch/widget/axyom.js" async></script>
+<div style="display:flex; gap:20px; align-items:flex-start;">
 
-<!-- AXYOM AI -->
+  <!-- Widget 1 -->
+  <div id="axyom-chat-1"></div>
+
+  <!-- Widget 2 -->
+  <div id="axyom-chat-2"></div>
+
+</div>
+
+<script src="https://api.axyom.ch/widget/axyom.js"></script>
+
 <script>
-  window.AXYOM_KEY = "axyom_live_99dce7186fa0f1972b639a39beff0b14";
+  Axyom.init({
+    key: "axyom_live_80165a9a014163a6750a6ba30ee99423",
+    container: "#axyom-chat-1"
+  });
+
+  Axyom.init({
+    key: "axyom_live_99dce7186fa0f1972b639a39beff0b14",
+    container: "#axyom-chat-2"
+  });
 </script>
-<script src="https://api.axyom.ch/widget/axyom.js" async></script>
