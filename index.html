@@ -37,34 +37,48 @@
   a:focus-visible, .button:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
 
-  /* top bar */
+  /* ---------- hero ---------- */
   .top { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; font-size: 16px; }
   .top .studio { color: var(--ink-soft); text-decoration: none; }
   .top .studio b { color: var(--ink); }
 
-  /* ---------- the bee-house front ---------- */
+  .hero { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: end; padding-top: 28px; }
+  .app { display: flex; align-items: center; gap: 16px; }
+  .app img { width: 72px; height: 72px; border-radius: 17px; box-shadow: 0 6px 16px -6px rgba(30, 42, 48, 0.5); }
+  .app .name { font-size: 26px; font-weight: 700; line-height: 1.1; }
+  .app .kind { font-size: 16px; color: var(--ink-soft); }
+  h1 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; letter-spacing: -0.015em; font-weight: 700; margin-top: 30px; max-width: 15em; }
+  .hero .sub { color: var(--ink-soft); margin-top: 16px; max-width: 32em; }
+  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; margin: 28px 0 56px; }
+  .button {
+    display: inline-block;
+    background: var(--ink); color: var(--white); text-decoration: none;
+    padding: 13px 22px; border-radius: 4px; font-weight: 700; font-size: 17px;
+  }
+  .button:hover { background: var(--cobalt); }
+  .cta .note { font-size: 16px; color: var(--ink-soft); max-width: 22em; line-height: 1.4; }
+  .hero .phone { margin-bottom: -150px; position: relative; z-index: 2; }
+
+  /* the bee-house front the phone stands on */
   .house {
-    margin-top: 8px;
     background:
       repeating-linear-gradient(90deg, transparent 0 118px, rgba(30, 42, 48, 0.07) 118px 120px),
       var(--board);
-    border-top: 14px solid #8a6a46;           /* eave */
-    border-bottom: 10px solid #8a6a46;        /* sill */
-    padding: 26px 22px 30px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 14px;
+    border-top: 12px solid #8a6a46;
+    border-bottom: 10px solid #8a6a46;
+    padding: 22px 0 24px;
   }
+  .house .doors { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
   .door {
     position: relative;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 1 / 1;
     border-radius: 3px;
     box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.10), 0 2px 0 rgba(0, 0, 0, 0.12);
     display: flex; align-items: flex-start; justify-content: center;
-    padding-top: 12%;
+    padding-top: 9%;
     color: rgba(255, 255, 255, 0.92);
     font-family: "Big Shoulders Stencil Display", Impact, sans-serif;
-    font-size: clamp(30px, 6vw, 64px);
+    font-size: clamp(24px, 4vw, 44px);
     line-height: 1;
   }
   .door.c1 { background: var(--cobalt); }
@@ -73,34 +87,14 @@
   .door.c4 { background: var(--red); }
   .door.c5 { background: var(--sage); }
   .door.c6 { background: var(--cobalt); }
-  /* flight entrance + landing board */
-  .door::before {
-    content: ""; position: absolute; left: 22%; right: 22%; bottom: 17%;
-    height: 7%; background: #1b1610; border-radius: 2px;
-  }
+  .door::before { content: ""; position: absolute; left: 22%; right: 22%; bottom: 20%; height: 8%; background: #1b1610; border-radius: 2px; }
   .door::after {
-    content: ""; position: absolute; left: 12%; right: 12%; bottom: 9%;
-    height: 7%; background: inherit; filter: brightness(0.86);
-    border-radius: 0 0 3px 3px;
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
+    content: ""; position: absolute; left: 12%; right: 12%; bottom: 10%; height: 9%;
+    background: inherit; filter: brightness(0.86); border-radius: 0 0 3px 3px; box-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
   }
-
-  /* intro under the house */
-  .intro { display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px; padding: 40px 0 24px; align-items: start; }
-  h1 { font-size: clamp(34px, 5.2vw, 56px); line-height: 1.08; letter-spacing: -0.015em; font-weight: 700; }
-  .intro p { color: var(--ink-soft); margin-top: 18px; max-width: 34em; }
-  .status { border-left: 6px solid var(--honey); padding: 4px 0 4px 18px; }
-  .status p { margin-top: 0; color: var(--ink); }
-  .status p + p { margin-top: 12px; color: var(--ink-soft); font-size: 17px; }
-  .button {
-    display: inline-block; margin-top: 18px;
-    background: var(--ink); color: var(--white); text-decoration: none;
-    padding: 12px 20px; border-radius: 4px; font-weight: 700; font-size: 17px;
-  }
-  .button:hover { background: var(--cobalt); }
 
   /* ---------- the journal ---------- */
-  section.journal { padding: 48px 0 16px; }
+  section.journal { padding: 72px 0 16px; }
   h2 { font-size: 30px; line-height: 1.2; font-weight: 700; }
   .lead { color: var(--ink-soft); margin-top: 10px; max-width: 40em; }
   .sheet {
@@ -121,8 +115,9 @@
   .sheet .foot { font-size: 10.5px; color: #555; margin-top: 10px; }
 
   /* ---------- how it works ---------- */
-  section.how { display: grid; grid-template-columns: 300px 1fr; gap: 48px; padding: 56px 0 24px; align-items: start; }
+  section.how { display: grid; grid-template-columns: 260px 1fr; gap: 48px; padding: 56px 0 24px; align-items: start; }
   .phone { width: 100%; max-width: 300px; border-radius: 34px; border: 9px solid var(--ink); background: var(--ink); display: block; }
+  .phone.second { max-width: 260px; }
   dl { margin-top: 18px; }
   dt { font-weight: 700; font-size: 20px; margin-top: 22px; display: flex; align-items: center; gap: 12px; }
   dt::before { content: ""; width: 14px; height: 18px; border-radius: 2px; flex: none; background: var(--c); }
@@ -141,14 +136,18 @@
   footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
 
   @media (max-width: 820px) {
-    .intro, section.how { grid-template-columns: 1fr; gap: 24px; }
+    .hero { grid-template-columns: 1fr; gap: 0; }
+    .hero .phone { max-width: 230px; margin: 0 auto -110px; }
+    .cta { margin-bottom: 36px; }
+    section.how { grid-template-columns: 1fr; gap: 24px; }
     section.how .phone { max-width: 240px; }
     .notes ul { grid-template-columns: 1fr; }
   }
   @media (max-width: 560px) {
     body { font-size: 18px; }
-    .house { grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 18px 14px 22px; }
-    .door { font-size: 40px; }
+    .house .doors { gap: 8px; }
+    .door { font-size: 24px; }
+    .app img { width: 60px; height: 60px; border-radius: 14px; }
   }
   @media (prefers-reduced-motion: no-preference) {
     tr.new .typed { animation: write 1.6s steps(28, end) 0.6s both; }
@@ -164,26 +163,28 @@
     <a href="mailto:contact@canyonapps.com">Kontakt</a>
   </div>
 
-  <div class="house" aria-hidden="true">
-    <div class="door c1">1</div>
-    <div class="door c2">2</div>
-    <div class="door c3">3</div>
-    <div class="door c4">4</div>
-    <div class="door c5">5</div>
-    <div class="door c6">6</div>
-  </div>
-
-  <section class="intro">
+  <section class="hero">
     <div>
-      <h1>Das Behandlungsjournal, am Bienenstand geführt.</h1>
-      <p>Bienenjournal hält Ihre Varroa-Behandlungen und die Tierarzneimittel fest, die Sie aufzeichnen müssen. Am Jahresende geben Sie ein PDF ab, das aussieht wie die Vorlage des BLV.</p>
+      <div class="app">
+        <img src="assets/apps/bienenjournal.png" alt="">
+        <div><div class="name">Bienenjournal</div><div class="kind">App für iPhone und iPad</div></div>
+      </div>
+      <h1>Varroa-Behandlungen und Tierarzneimittel festhalten, direkt am Bienenstand.</h1>
+      <p class="sub">Für Imkerinnen und Imker in der Schweiz und in Liechtenstein. Am Jahresende geben Sie ein PDF ab, das der Vorlage des BLV entspricht.</p>
+      <div class="cta">
+        <a class="button" href="mailto:contact@canyonapps.com?subject=Testversion%20Bienenjournal">Testversion anfragen</a>
+        <span class="note">Erscheint 2027 im App Store. Wer jetzt testet, erhält die Vollversion kostenlos.</span>
+      </div>
     </div>
-    <div class="status">
-      <p>Die App für iPhone und iPad ist in der Testphase und erscheint 2027 im App Store.</p>
-      <p>Sie halten Bienen und möchten sie vorher ausprobieren? Testerinnen und Tester erhalten die Vollversion später kostenlos.</p>
-      <a class="button" href="mailto:contact@canyonapps.com?subject=Testversion%20Bienenjournal">Testversion anfragen</a>
-    </div>
+    <img class="phone" src="assets/apps/bienenjournal-heute.png" alt="Startbildschirm von Bienenjournal mit der Schaltfläche «Behandlung erfassen» und den zuletzt erfassten Behandlungen.">
   </section>
+</div>
+
+<div class="house" aria-hidden="true">
+  <div class="doors">
+    <div class="door c1">1</div><div class="door c2">2</div><div class="door c3">3</div>
+    <div class="door c4">4</div><div class="door c5">5</div><div class="door c6">6</div>
+  </div>
 </div>
 
 <div class="wrap">
@@ -212,7 +213,7 @@
   </section>
 
   <section class="how">
-    <img class="phone" src="assets/apps/bienenjournal-erfassen.png" alt="Bildschirm «Behandlung erfassen»: Stand wählen, Völker antippen, Präparat und Dosis, Art der Behandlung.">
+    <img class="phone second" src="assets/apps/bienenjournal-erfassen.png" alt="Bildschirm «Behandlung erfassen»: Stand wählen, Völker antippen, Präparat und Dosis, Art der Behandlung.">
     <div>
       <h2>So führen Sie es</h2>
       <dl>
